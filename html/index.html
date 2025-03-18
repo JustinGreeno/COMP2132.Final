@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Assignment08 - COMP2132</title>
+    <meta charset="UTF-8">
+    <!-- Extends the ability to read and render all font characters-->
+    <!-- Meta self closes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <!-- jQuery (make sure to load it before your custom script) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- JavaScript file -->
+    <!-- All are deffered, Scripts is listed last -->
+   
+     <!-- Reference the external JS file -->
+    <script defer src="../scripts/carousel.js"></script>
+    <script defer src="../scripts/pacman.js"></script>
+    <script defer src="../scripts/script.js"></script>
+    <!-- Making sure the viewport is sized based on screen used, IE. phone or computer-->
+    <!-- linking to the css style folder-->
+    <link href="../css/my_style.css" rel="stylesheet">
+   
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+
+
+    <!-- Icon for tabs -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+</head>
+<body>
+    <div>
+        <header>
+            <a href="../html/index.html"> <img src="../images/books.png" alt="books"></a>
+            <h1>COMP2132 Assignment 08 - Spin me right round baby- right round</h1>
+        </header>
+    
+
+
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search...">
+                <!--<button type="submit">Search</button>-->
+            </form>
+
+
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="thank-you.html">Thanks</a></li>
+                </ul>
+              </nav>
+          
+
+<!-- Roating Bike for Session 08 -->
+<article class="container">
+    <h1> Bicycle Carousel with JavaScript </h1>
+              <div class="carousel-container">
+                <img id="bikeImage" class="carousel-image" src="../images/product/bike-1.jpg" alt="Product Bike">
+                <div class="controls">
+                  <button id="spinLeftAnim" title="Spin Left Animation">⟲</button>
+                  <button id="frameLeft" title="Rotate One Frame Left">←</button>
+                  <button id="stop" title="Stop Animation">⏸</button>
+                  <button id="frameRight" title="Rotate One Frame Right">→</button>
+                  <button id="spinRightAnim" title="Spin Right Animation">⟳</button>
+                </div>
+              </div>
+</article>
+
+<!-- PACMAN       < < < < < < < <   -->
+<article class="container">
+    <h1>Pac-Man Game</h1>
+<div class="game-container">
+    <div class="game-box" id="gameBox">
+      <img id="pacman" src="../images/pacman/pac-man-static.gif" alt="Pac-Man">
+    </div>
+    <div class="instructions">
+      <p>Controls:</p>
+      <ul>
+        
+            <li id="key-up">W: ↑</li>
+            <li id="key-left">A: ←</li>
+            <li id="key-down">S: ↓</li>
+            <li id="key-right">D: →</li>
+            <li id="key-stop" class="active">X: ⏹</li>
+          
+      </ul>
+    </div>
+</article>
+
+
+
+
+  <!--  -->
+            <article class="container">
+
+                <a href="index.html">
+                    <img src="../images/pixel_justin.gif" alt="Darkness Blooms" style="float: left; margin: 0 10px 10px 0;">
+                </a>
+               
+                <h2> Justin Greeno Is Learning Java Script</h2>
+
+                <h4> Thanks for checking out my practice website </h4>
+
+                <p>
+                  BLah blah blahhh blah blah blahhha. Blah bhlala blah! blah blah blah blllahh?  
+                  BLah blah blahhh blah blah blahhha. Blah bhlala blah! blah blah blah blllahh? 
+                  BLah blah blahhh blah blah blahhha. Blah bhlala blah! blah blah blah blllahh? 
+                  BLah blah blahhh blah blah blahhha. Blah bhlala blah! blah blah blah blllahh? 
+                </p>
+            </article>
+        </div>
+
+
+    <footer>
+        <!-- Social media icons -->
+        <div class="social-icons">
+            <h4>
+                Social Media Links
+            </h4>
+            <a href="https://www.youtube.com" target="_blank"><img src="../images/yt.png" alt="Youtube"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="../images/twit.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="../images/insta.png" alt="Instagram"></a>
+            <a href="https://www.discord.com" target="_blank"><img src="../images/discord.png" alt="discord"></a>
+            <a href="https://www.patreon.com" target="_blank"><img src="../images/patreon.png" alt="Patreon"></a>
+            <a href="https://www.twitch.com" target="_blank"><img src="../images/twitch.png" alt="Twitch"></a>
+
+            <!-- Add more social media icons as needed -->
+            <!-- Other footer content -->
+            <p>
+                2025 DarknessBlooms.com<br />
+                Founder: Justin Greeno<br />
+                Vancouver B.C.<br />
+            </p>
+        </div>
+    </footer>
+
+
+
+    
+
+</body>
+</html>
