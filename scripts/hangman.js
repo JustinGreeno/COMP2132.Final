@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       wrongGuesses = 0;
       guessedLetters = new Set();
       resultMessage.textContent = '';
+      wordDisplay.classList.remove('win-word'); // Remove win styling if present
       playAgainButton.classList.add('hidden');
       hangmanImage.src = '../images/hang0.png';
       letterInput.disabled = false;
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       createKeyboard();
     }
   
-    // Update the displayed phrase
+    // Update the displayed phrase with spaces between letters
     function updateWordDisplay() {
       wordDisplay.textContent = displayedPhrase.join(' ');
     }
@@ -142,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!displayedPhrase.includes('_')) {
         gameActive = false;
         resultMessage.textContent = 'Congratulations! You won!';
+        wordDisplay.classList.add('win-word');
         endGame();
       }
     }
@@ -162,13 +164,15 @@ document.addEventListener('DOMContentLoaded', () => {
       updateWordDisplay();
     }
   
-    // End game by disabling inputs and showing the play again button
+    // End game by disabling inputs and dulling all keyboard buttons
     function endGame() {
       letterInput.disabled = true;
       guessButton.disabled = true;
-      Array.from(keyboardDiv.getElementsByTagName('button')).forEach(btn => {
+      const buttons = keyboardDiv.getElementsByTagName('button');
+      for (let btn of buttons) {
         btn.disabled = true;
-      });
+        btn.classList.add('disabled');
+      }
       playAgainButton.classList.remove('hidden');
     }
   
