@@ -925,7 +925,163 @@ input, select, button {
     color: #ffffff88;
     border-color: #008812;
   }
+
+  @mixin button-style($bg-color, $text-color: $primary-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.2em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: lighten($bg-color, 10%);
+    }
+  }
+
+
+  .game-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 1em;
+  }
   
+  .hangman-container {
+    margin-bottom: 1em;
+  }
+  
+  .word-container {
+    margin: 1em 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+  }
+  
+  .hint-container {
+    margin-bottom: 1em;
+    font-style: italic;
+  }
+  
+  .letters-container {
+    margin-bottom: 1em;
+  }
+  
+  #keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .letters-container button {
+    @include button-style($background-color);
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+  
+  .input-container {
+    margin-bottom: 1em;
+  }
+  
+  #letter-input {
+    width: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.2em;
+    margin-right: 0.5em;
+  }
+  
+  #guess-button {
+    @include button-style($accent-color);
+  }
+  
+  .result-container {
+    margin-top: 1em;
+    font-size: 1.2rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  }
+
+  .letters-container button {
+    background-color: #2b2b2b;
+    color: #f9f9f9;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.2em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+  .letters-container button:hover {
+    background-color: #3a3a3a;
+  }
+  .input-container {
+    margin-bottom: 1em;
+  }
+  #letter-input {
+    width: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.2em;
+    margin-right: 0.5em;
+  }
+  #guess-button {
+    background-color: #a0c4ff;
+    color: #f9f9f9;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.2em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  #guess-button:hover {
+    background-color: #b3d0ff;
+  }
+  .result-container {
+    margin-top: 1em;
+    font-size: 1.2rem;
+  }
+  .hidden {
+    display: none;
+  }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  .shake {
+    animation: shake 0.5s;
+  }
 /*
 ------------------------
 Wrapper

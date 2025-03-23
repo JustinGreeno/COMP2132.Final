@@ -14,9 +14,9 @@
     <!-- All are deffered, Scripts is listed last -->
    
      <!-- Reference the external JS file -->
-    <script defer src="../scripts/carousel.js"></script>
-    <script defer src="../scripts/pacman.js"></script>
+
     <script defer src="../scripts/script.js"></script>
+    <script defer src="../scripts/scripts/hangman.js"></script>
     <!-- Making sure the viewport is sized based on screen used, IE. phone or computer-->
     <!-- linking to the css style folder-->
     <link href="../css/my_style.css" rel="stylesheet">
@@ -64,43 +64,40 @@
               </nav>
           
 
-<!-- Roating Bike for Session 08 -->
 <article class="container">
-    <h1> Bicycle Carousel with JavaScript </h1>
-              <div class="carousel-container">
-                <img id="bikeImage" class="carousel-image" src="../images/product/bike-1.jpg" alt="Product Bike">
-                <div class="controls">
-                  <button id="spinLeftAnim" title="Spin Left Animation">⟲</button>
-                  <button id="frameLeft" title="Rotate One Frame Left">←</button>
-                  <button id="stop" title="Stop Animation">⏸</button>
-                  <button id="frameRight" title="Rotate One Frame Right">→</button>
-                  <button id="spinRightAnim" title="Spin Right Animation">⟳</button>
-                </div>
-              </div>
+    <div class="game-container">
+        <header>
+          <h1>Hangman</h1>
+        </header>
+    
+        <div class="hangman-container">
+          <img id="hangman-image" src="images/hang0.png" alt="Hangman" />
+        </div>
+    
+        <div class="word-container">
+          <p id="word-display">_ _ _ _ _</p>
+        </div>
+    
+        <div class="hint-container">
+          <p id="hint-display">Hint: ...</p>
+        </div>
+    
+        <div class="letters-container">
+          <div id="keyboard"></div>
+        </div>
+    
+        <div class="input-container">
+          <label for="letter-input">Guess a letter:</label>
+          <input type="text" id="letter-input" maxlength="1" />
+          <button id="guess-button">Guess</button>
+        </div>
+    
+        <div class="result-container">
+          <p id="result-message"></p>
+          <button id="play-again" class="hidden">Play Again</button>
+        </div>
+      </div>
 </article>
-
-<!-- PACMAN       < < < < < < < <   -->
-<article class="container">
-    <h1>Pac-Man Game</h1>
-<div class="game-container">
-    <div class="game-box" id="gameBox">
-      <img id="pacman" src="../images/pacman/pac-man-static.gif" alt="Pac-Man">
-    </div>
-    <div class="instructions">
-      <p>Controls:</p>
-      <ul>
-        
-            <li id="key-up">W: ↑</li>
-            <li id="key-left">A: ←</li>
-            <li id="key-down">S: ↓</li>
-            <li id="key-right">D: →</li>
-            <li id="key-stop" class="active">X: ⏹</li>
-          
-      </ul>
-    </div>
-</article>
-
-
 
 
   <!--  -->
