@@ -8,7 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultMessage = document.getElementById('result-message');
     const playAgainButton = document.getElementById('play-again');
   
-    let words = [];
+    // Embedded JSON data (previously in words.json)
+    const words = [
+      { "phrase": "May the Force be with you", "hint": "Star Wars classic" },
+      { "phrase": "I'll be back", "hint": "Terminator catchphrase" },
+      { "phrase": "Houston we have a problem", "hint": "Apollo 13 quote" },
+      { "phrase": "There's no place like home", "hint": "The Wizard of Oz" },
+      { "phrase": "You talking to me", "hint": "Taxi Driver iconic line" },
+      { "phrase": "The Great Gatsby", "hint": "F. Scott Fitzgerald novel" },
+      { "phrase": "To Kill a Mockingbird", "hint": "Harper Lee novel" },
+      { "phrase": "Pride and Prejudice", "hint": "Jane Austen novel" },
+      { "phrase": "The Catcher in the Rye", "hint": "J.D. Salinger novel" },
+      { "phrase": "Moby Dick", "hint": "Herman Melville classic" },
+      { "phrase": "Hello World", "hint": "First program output" },
+      { "phrase": "Have you tried turning it off and on again", "hint": "IT support advice" },
+      { "phrase": "It's not a bug it's a feature", "hint": "Programmer excuse" },
+      { "phrase": "There are 10 types of people in the world", "hint": "Binary joke" },
+      { "phrase": "Blue Screen of Death", "hint": "Windows error" },
+      { "phrase": "Winter is coming", "hint": "Game of Thrones warning" },
+      { "phrase": "Keep Calm and Carry On", "hint": "British wartime slogan" },
+      { "phrase": "Just Do It", "hint": "Famous advertising slogan" },
+      { "phrase": "Live long and prosper", "hint": "Star Trek greeting" },
+      { "phrase": "Hakuna matata", "hint": "The Lion King phrase" }
+    ];
+  
     let currentPhrase = '';
     let currentHint = '';
     let displayedPhrase = [];
@@ -17,17 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let guessedLetters = new Set();
     let gameActive = true;
   
-    // Fetch words from JSON file
-    function fetchWords() {
-      fetch('scripts/words.json')
-        .then(response => response.json())
-        .then(data => {
-          words = data;
-          startNewGame();
-        })
-        .catch(err => console.error('Error fetching words:', err));
-    }
-  
     // Start a new game by resetting all variables
     function startNewGame() {
       gameActive = true;
@@ -35,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       guessedLetters = new Set();
       resultMessage.textContent = '';
       playAgainButton.classList.add('hidden');
-      hangmanImage.src = 'images/hang0.png';
+      hangmanImage.src = '../images/hang0.png';
       letterInput.disabled = false;
       guessButton.disabled = false;
       keyboardDiv.innerHTML = '';
@@ -110,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Update hangman image based on wrong guesses
     function updateHangmanImage() {
-      hangmanImage.src = `images/hang${wrongGuesses}.png`;
+      hangmanImage.src = `../images/hang${wrongGuesses}.png`;
     }
   
     // Animate the hangman image on a wrong guess
@@ -119,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         hangmanImage.classList.remove('shake');
       }, 500);
-      hangmanImage.style.border = `5px solid ${'#ff6b6b'}`;
+      hangmanImage.style.border = `5px solid #ff6b6b`;
       setTimeout(() => {
         hangmanImage.style.border = 'none';
       }, 500);
@@ -189,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Initialize the game by fetching the words
-    fetchWords();
+    // Initialize the game immediately using the embedded words
+    startNewGame();
   });
   
